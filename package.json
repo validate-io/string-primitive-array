@@ -26,12 +26,22 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "string",
+    "array",
+    "stringarray",
+    "primitive",
+    "is",
+    "isarray",
+    "isstringarray"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/string-primitive-array/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.3"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",

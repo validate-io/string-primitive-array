@@ -17,18 +17,39 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-string-primitive-array' );
+var isStringArray = require( 'validate.io-string-primitive-array' );
 ```
 
-#### foo( value )
+#### isStringArray( value )
 
-What does this function do?
+Validates if a `value` is an `array` of `string` primitives.
+
+``` javascript
+var arr = ['beep','boop'];
+
+var bool = isStringArray( arr );
+// returns true
+```
+
+__Note__: the method will return `false` for an empty `array`.
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-string-primitive-array' );
+var isStringArray = require( 'validate.io-string-primitive-array' );
+
+console.log( isStringArray( ['beep','boop'] ) );
+// returns true
+
+console.log( isStringArray( [ new String( 'beep' ) ] ) );
+// returns false
+
+console.log( isStringArray( [] ) );
+// returns false
+
+console.log( isStringArray( [1,2,3] ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,

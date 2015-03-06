@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	isStringArray = require( './../lib' );
 
 
 // VARIABLES //
@@ -21,9 +21,35 @@ var expect = chai.expect,
 describe( 'validate.io-string-primitive-array', function tests() {
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( isStringArray ).to.be.a( 'function' );
 	});
 
-	it( 'should do something' );
+	it( 'should positively validate', function test() {
+		var bool = isStringArray( ['beep','boop'] );
+		assert.ok( bool );
+	});
+
+	it( 'should negatively validate', function test() {
+		var values = [
+			5,
+			'5',
+			null,
+			undefined,
+			true,
+			NaN,
+			function(){},
+			[],
+			{},
+			['a', new String('b')],
+			['a',null,'b']
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.notOk( badValue( values[i] ) );
+		}
+		function badValue( value ) {
+			return isStringArray( value );
+		}
+	});
 
 });
