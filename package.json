@@ -1,6 +1,6 @@
 {
   "name": "validate.io-string-primitive-array",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Validates if a value is an array of string primitives.",
   "author": {
     "name": "Athan Reines",
